@@ -2,7 +2,7 @@ use clap::Parser;
 use std::fs;
 use std::io::Read;
 use std::path::PathBuf;
-use tracing::{debug, info, instrument, Level};
+use tracing::{Level, debug, info, instrument};
 use tracing_subscriber::FmtSubscriber;
 
 #[derive(Debug, Parser)]
@@ -14,10 +14,20 @@ use tracing_subscriber::FmtSubscriber;
     after_help = "EXAMPLES:\n  tomkd -i article.html -o article.md    Convert file to Markdown\n  tomkd -i article.html                    Derive output as article.md\n  cat article.html | tomkd                 Read from stdin, write to output.md\n  cat article.html | tomkd -o out.md       Read from stdin, write to out.md"
 )]
 struct Args {
-    #[arg(short, long, value_name = "FILE", help = "Input HTML file (reads from stdin if omitted")]
+    #[arg(
+        short,
+        long,
+        value_name = "FILE",
+        help = "Input HTML file (reads from stdin if omitted"
+    )]
     input: Option<PathBuf>,
 
-    #[arg(short, long, value_name = "FILE", help = "Output Markdown file (derived from input or defaults to output.md if omitted")]
+    #[arg(
+        short,
+        long,
+        value_name = "FILE",
+        help = "Output Markdown file (derived from input or defaults to output.md if omitted"
+    )]
     output: Option<PathBuf>,
 }
 

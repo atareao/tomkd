@@ -1,7 +1,6 @@
 # Changelog
+## [0.1.1] - 2026-06-11
 
-## [0.1.0] - 2025-01-01
+### Miscellaneous Tasks
 
-### Features
-
-- Initial release
+- Add CI/CD workflows from vampus

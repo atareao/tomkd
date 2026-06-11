@@ -169,4 +169,11 @@ mod tests {
         assert_eq!(content, "content");
         std::fs::remove_file("output.md").unwrap();
     }
+
+    #[test]
+    fn test_convert_html_multiline_paragraph() {
+        let html = "<p>First line</p><p>Second line</p>";
+        let result = convert_html(html).unwrap();
+        assert_eq!(result, "First line\n\nSecond line\n");
+    }
 }
